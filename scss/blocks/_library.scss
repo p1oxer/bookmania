@@ -1,0 +1,113 @@
+.library {
+    margin-bottom: 40px;
+
+    // .library__body
+    &__body {
+        display: grid;
+        grid-template-columns: minmax(500px, 1400px) minmax(230px, 300px);
+        @include adaptiveValue("gap", 30, 15);
+
+        @media (max-width:$mobile) {
+            display: block;
+        }
+    }
+
+    // .library__categories
+    &__categories {}
+}
+
+.collection-title {}
+
+.library-collection-books__top {
+    @include adaptiveValue("margin-bottom", 40, 20);
+    gap: 15px;
+
+    @media (max-width: em(360)) {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+.categories-library {
+    min-width: 230px;
+
+    @media (max-width:$mobile) {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 70%;
+        height: 100%;
+        background-color: $hover;
+        display: flex;
+        align-items: start;
+        transition: right 0.3s ease 0s;
+        overflow: auto;
+        z-index: 5;
+
+        &.open {
+            right: 0;
+        }
+
+        .close-button {
+            @media (max-width:$mobile) {
+                position: absolute;
+                right: 30px;
+                top: 90px;
+                width: 30px;
+                height: 30px;
+                background: url('../img/icons/close.svg') 0 0 no-repeat;
+            }
+
+        }
+    }
+
+    &__body {
+        @media (max-width:$mobile) {
+            padding: 140px 15px 15px 15px;
+
+        }
+    }
+
+    // .categories-library__title
+    &__title {
+        @include adaptiveValue("font-size", 26, 20);
+        font-weight: bold;
+
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+
+        }
+
+        @media (max-width:$mobile) {
+            color: #fff;
+        }
+    }
+
+    // .categories-library__list
+    &__list {}
+
+    // .categories-library__item
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+
+    }
+
+    // .categories-library__link
+    &__link {
+        color: $mainColor;
+        @include adaptiveValue("font-size", 18, 14);
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+                color: $hover;
+            }
+        }
+
+        @media (max-width:$mobile) {
+            color: #fff;
+        }
+    }
+}

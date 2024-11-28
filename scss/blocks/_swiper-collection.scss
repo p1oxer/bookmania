@@ -1,0 +1,215 @@
+.books {
+
+    // .books__collection
+    &__collection {}
+}
+
+.collection-books {
+    &:not(:last-child) {
+        margin-bottom: rem(30);
+    }
+
+    // .collection-books__content
+    &__content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @media (max-width:$mobileSmall) {
+            padding: 10px;
+        }
+    }
+
+    // .collection-books__top
+    &__top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // .collection-books__title
+    &__title {
+        font-weight: bold;
+        @include adaptiveValue("font-size", 24, 18);
+
+        p {
+            display: inline;
+            color: $mainColor;
+            font-weight: bold;
+        }
+    }
+
+    // .collection-books__more
+    &__more {
+        color: $mainColor;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.1s ease 0s;
+        @include adaptiveValue("font-size", 16, 13);
+
+        @media (any-hover: hover) {
+            &:hover {
+
+                svg {
+                    transform: translate(3px, 0) rotate(-90deg);
+                }
+            }
+        }
+
+        svg {
+            fill: $mainColor;
+            width: 10px;
+            transform: rotate(-90deg);
+            transition: all 0.3s ease 0s;
+        }
+    }
+
+    // .collection-books__subtitle
+    &__subtitle {
+        margin-bottom: 15px;
+        @include adaptiveValue("font-size", 16, 13);
+    }
+
+    // .collection-books__slider
+    &__slider {}
+
+    // .collection-books__swiper
+    &__swiper {}
+
+    // .collection-books__slide
+    &__slide {}
+}
+
+.slide-collection-books {
+    max-width: 150px;
+
+    @media (max-width:$mobileSmall) {
+        max-width: 100px;
+    }
+
+    // .slide-collection-books__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        color: #000;
+        position: relative;
+
+        .audio-icon {
+            width: 37px;
+            height: 37px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            padding: 8px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+    }
+
+    // .slide-collection-books__img
+    &__img {}
+
+    // .slide-collection-books__name
+    &__name {
+        font-weight: bold;
+        margin-top: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        @include adaptiveValue("font-size", 16, 13);
+    }
+
+    // .slide-collection-books__author
+    &__author {
+        color: $mainColor;
+        @include adaptiveValue("font-size", 16, 13);
+    }
+}
+
+.swiper-button-prev1 {
+    left: 30px;
+    transform: translate(-50%, 0px) rotate(90deg);
+}
+
+
+.swiper-button {
+    position: absolute;
+    top: 30%;
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width:$mobile) {
+        opacity: 0.8;
+    }
+
+    @media (max-width:$mobileSmall) {
+        display: none;
+    }
+
+    svg {
+        width: rem(20);
+        height: fit-content;
+    }
+}
+
+.swiper-button-disabled {
+    display: none;
+}
+
+.swiper-button-next1 {
+    right: -20px;
+    transform: translate(-50%, 0px) rotate(-90deg);
+}
+
+.slide-categories {
+    padding: 15px;
+    max-width: 300px;
+    border-radius: 15px;
+    border: 1px solid #194e943f;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+        &:hover {
+            border: 1px solid $mainColor;
+        }
+    }
+
+    @media (max-width:$mobile) {
+        max-width: 200px;
+    }
+}
+
+.swiper-categories {}
+
+.categories-item {
+
+
+    // .categories-item__name
+    &__name {
+        color: $mainColor;
+        font-weight: 600;
+        @include adaptiveValue("font-size", 20, 16);
+        white-space: nowrap;
+    }
+
+    // .categories-item__stats
+    &__stats {
+        p {
+            color: #414141;
+            @include adaptiveValue("font-size", 16, 12);
+        }
+    }
+}

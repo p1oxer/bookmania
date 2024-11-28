@@ -1,0 +1,90 @@
+.intro {
+    // .intro__body
+    &__body {}
+}
+
+
+.body-intro {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    @media (max-width:$mobile) {
+        gap: 30px;
+    }
+
+    @media (max-width:em(600)) {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    // .body-intro__content
+    &__content {
+        display: flex;
+        @include adaptiveValue("gap", 10, 5);
+        flex-direction: column;
+
+        @media (min-width:em(600)) {
+            max-width: 60%;
+        }
+    }
+
+    // .body-intro__title
+    &__title {
+        @include adaptiveValue("font-size", 50, 30);
+        font-weight: bold;
+
+        span {
+            color: $mainColor;
+        }
+    }
+
+    // .body-intro__subtitle
+    &__subtitle {
+        @include adaptiveValue("font-size", 22, 16);
+        margin-bottom: 10px;
+    }
+
+    // .body-intro__button
+    &__button {}
+
+    // .body-intro__advantages
+    &__advantages {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+
+}
+
+.advantages-body-intro {
+
+    // .advantages-body-intro__item
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    // .advantages-body-intro__icon
+    &__icon {
+        width: 60px;
+    }
+
+    // .advantages-body-intro__text
+    &__text {
+        h4 {
+            font-weight: bold;
+            @include adaptiveValue("font-size", 20, 16);
+        }
+
+        p {
+
+            @include adaptiveValue("font-size", 16, 12);
+        }
+    }
+}

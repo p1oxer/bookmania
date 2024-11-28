@@ -1,0 +1,125 @@
+.footer {
+    background-color: $mainColor;
+    padding-top: 40px;
+    @include adaptiveValue("padding-top", 40, 20);
+    @include adaptiveValue("padding-bottom", 40, 20);
+
+    // .footer__body
+    &__body {}
+}
+
+.body-footer {
+    display: flex;
+    flex-direction: column;
+
+    // .body-footer__nav
+    &__nav {
+        @include adaptiveValue("margin-bottom", 50, 25);
+    }
+
+    // .body-footer__list
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 10px;
+        column-gap: 30px;
+
+        @media (min-width:$mobile) {
+            max-width: 50%;
+        }
+    }
+
+    // .body-footer__item
+    &__item {}
+
+    // .body-footer__link
+    &__link {
+        color: #fff;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @include adaptiveValue("font-size", 20, 16);
+    }
+
+    // .body-footer__bottom
+    &__bottom {}
+}
+
+.bottom-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    @include adaptiveValue("gap", 30, 15);
+
+    h5 {
+        margin-bottom: rem(10);
+        color: #fff;
+        font-weight: bold;
+    }
+
+    // .bottom-footer__socials
+    &__socials {}
+
+    // .bottom-footer__socials--wrapper
+    &__socials--wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    // .bottom-footer__socials--item
+    &__socials--item {
+        width: 30px;
+
+        svg {
+            transition: all 0.1s ease 0s;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+
+    &__contacts--wrapper {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    // .bottom-footer__contacts
+    &__contacts {
+        a {
+            color: #fff;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+
+        }
+    }
+
+    // .bottom-footer__policy
+    &__policy {
+        color: #fff;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

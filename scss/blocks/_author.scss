@@ -1,0 +1,140 @@
+.author {
+    margin-bottom: 40px;
+
+    // .author__body
+    &__body {}
+}
+
+.container {}
+
+.author__content {
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.body-author {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    @include adaptiveValue("gap", 50, 15);
+    @include adaptiveValue("margin-bottom", 30, 15);
+
+    @media (max-width:$mobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .body-author__img
+    &__img {
+        img {
+            border-radius: 15px;
+            max-width: 100%;
+
+            @media (max-width:$mobile) {
+                max-width: 300px;
+            }
+        }
+    }
+
+    // .body-author__inner
+    &__inner {}
+}
+
+.inner-body-author {
+
+    // .inner-body-author__name
+    &__name {
+        @include adaptiveValue("font-size", 40, 30);
+        font-weight: bold;
+    }
+
+    // .inner-body-author__books-amount
+    &__books-amount {
+        color: #414141;
+        @include adaptiveValue("font-size", 14, 12);
+        margin-bottom: 20px;
+    }
+
+    // .inner-body-author__about
+    &__about {
+        button {
+            @include adaptiveValue("font-size", 16, 13);
+        }
+
+        margin-bottom: 15px;
+    }
+
+    // .inner-body-author__text
+    &__text {
+        color: #414141;
+
+        p {
+            @include adaptiveValue("font-size", 16, 12);
+
+            &:not(:last-child) {
+                margin-bottom: rem(15);
+            }
+        }
+    }
+}
+
+.author {
+
+    // .author__stat
+    &__stat {}
+}
+
+.author-img {
+    img {
+        border-radius: 10px;
+    }
+}
+
+.stat-author {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptiveValue("gap", 30, 15);
+
+    // .stat-author__item
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    // .stat-author__title
+    &__title {
+        font-weight: bold;
+        @include adaptiveValue("font-size", 24, 18);
+        margin-bottom: 10px;
+
+        p {
+            color: $mainColor;
+            display: inline;
+        }
+    }
+
+    // .stat-author__body
+    &__body {
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    // .stat-author__name
+    &__name {
+        color: #000;
+        @include adaptiveValue("font-size", 20, 16);
+        font-weight: 500;
+    }
+
+    &__amount {
+        color: $mainColor;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

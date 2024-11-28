@@ -1,0 +1,62 @@
+@use "sass:math";
+
+@import "_nullstyle", "_vars", "_mixins", "_common", "_header", "_footer", "blocks/intro", "blocks/_swiper-collection", "blocks/_book", "blocks/payment", "blocks/_books", "blocks/_library", "blocks/_author";
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700);
+
+body {
+    background-color: #e9f2fc;
+
+    &.body-lock {
+        overflow: hidden;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Nunito";
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+.container {
+    max-width: $containerWidth + px;
+    padding: 0 15px;
+    margin: 0px auto;
+}
+
+.block-title {
+    font-weight: bold;
+    @include adaptiveValue("font-size", 40, 30);
+}
+
+.block-subtitle {}
+
+.swiper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.privacy-policy .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 15px;
+
+    h1 {
+        font-weight: bold;
+        @include adaptiveValue("font-size", 30, 24);
+    }
+
+    h5 {
+        font-weight: bold;
+        @include adaptiveValue("font-size", 20, 16);
+    }
+
+    p {
+        @include adaptiveValue("font-size", 16, 13);
+    }
+}

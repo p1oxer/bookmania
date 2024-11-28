@@ -1,0 +1,212 @@
+.input {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 2px solid $stroke;
+    transition: all 0.3s ease 0s;
+
+    &:focus {
+        border: 2px solid #b4b4b4;
+    }
+}
+
+.button {
+    color: #fff;
+    background-color: $mainColor;
+    padding: 15px 30px;
+    max-width: fit-content;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.1s ease 0s;
+    box-shadow: 0px 0px 12px 6px rgba(0, 58, 103, 0.2);
+    @include adaptiveValue("font-size", 16, 13);
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $hover;
+        }
+    }
+
+    &:active {
+        background-color: #004db1;
+    }
+
+    &.button-link {
+        display: inline-block;
+        text-align: center;
+    }
+
+    a {
+        // padding: 15px 100%;
+        display: block;
+        color: #fff;
+    }
+
+}
+
+.breadcrumbs {
+    color: #7882b1de;
+    @include adaptiveValue("padding-top", 40, 20);
+    @include adaptiveValue("padding-bottom", 40, 20);
+
+    a {
+        color: #7882b1de;
+        @include adaptiveValue("font-size", 16, 13);
+
+        &._active {
+            color: $mainColor;
+            font-weight: 600;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+
+                color: $hover;
+            }
+        }
+    }
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: math.div(14, 10);
+}
+
+.block {
+    @include adaptiveValue("padding-top", 100, 50);
+    @include adaptiveValue("padding-bottom", 100, 50);
+}
+
+#toggleButton {
+    color: $mainColor;
+
+    @media (any-hover: hover) {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.textToHide {
+    &.opened {
+        display: block;
+    }
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    color: #fff;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: fit-content;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    button {
+        &:first-child {
+            transform: rotate(90deg);
+            opacity: .5;
+
+            svg {}
+        }
+
+        &[disabled] {
+            cursor: default;
+        }
+
+        &:last-child {
+            transform: rotate(-90deg);
+        }
+
+        svg {
+            width: 15px;
+        }
+    }
+
+    a,
+    span {
+        color: $mainColor;
+    }
+
+    a._active {
+        opacity: .5;
+        cursor: default;
+    }
+}
+
+
+
+.auth {
+
+    // .auth__body
+    &__body {}
+}
+
+.container {}
+
+#register {
+    display: none;
+}
+
+.body-auth {
+    max-width: 500px;
+    margin: 0px auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    // .body-auth__form
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+
+        a {
+            color: $mainColor;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .button {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        input:focus {
+            border-color: $mainColor;
+        }
+    }
+}
+
+.switchButton {
+    span {
+        color: $mainColor;
+        cursor: pointer;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.input {}
+
+.button {}
